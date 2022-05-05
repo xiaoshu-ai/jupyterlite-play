@@ -22,12 +22,12 @@ jobs:
         run: |
           python -m pip install -r requirements.txt
       - name: Build the JupyterLite site
-        env:
+        # env:
           # JUPYTERLITE_PYODIDE_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/pyodide/v0.20.0/full/pyodide.js
           # JUPYTERLITE_BASE_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/jupyterlite-play/
         run: |
           cp README.md content
-          echo $JUPYTERLITE_PYODIDE_URL $JUPYTERLITE_BASE_URL
+          # echo $JUPYTERLITE_PYODIDE_URL $JUPYTERLITE_BASE_URL
           jupyter lite build --contents content
           rm -f _output/lab/favicon.ico
           cp favicon.ico _output/lab/
