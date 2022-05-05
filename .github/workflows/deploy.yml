@@ -46,7 +46,13 @@ jobs:
           name: jupyterlite-demo-dist-${{ github.run_number }}
           path: ./dist
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4.1.3
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.ref == 'refs/heads/dev'
         with:
-          branch: gh-pages
-          folder: dist
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          cname: play.xiaoshu.ai
+        # uses: JamesIves/github-pages-deploy-action@4.1.3
+        # with:
+        #   branch: gh-pages
+        #   folder: dist
