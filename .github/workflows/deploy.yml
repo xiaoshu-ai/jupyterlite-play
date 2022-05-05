@@ -27,7 +27,10 @@ jobs:
           JUPYTERLITE_BASE_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/jupyterlite-play/
         run: |
           cp README.md content
-          jupyter lite build --contents content
+          echo $JUPYTERLITE_PYODIDE_URL $JUPYTERLITE_BASE_URL
+          jupyter lite build --contents content \
+                             --base-url https://xiaoshuai-static.oss-accelerate.aliyuncs.com/jupyterlite-play/ \
+                             --pyodide https://xiaoshuai-static.oss-accelerate.aliyuncs.com/pyodide/v0.20.0/full/pyodide.js
           rm -f _output/lab/favicon.ico
           cp favicon.ico _output/lab/
           touch _output/.nojekll
