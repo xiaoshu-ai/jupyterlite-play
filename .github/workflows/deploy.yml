@@ -23,8 +23,8 @@ jobs:
           python -m pip install -r requirements.txt
       - name: Build the JupyterLite site
         env:
-          PYODIDE_CDN_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/pyodide/v0.20.0/full/pyodide.js
-          # JUPYTERLITE_PYODIDE_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/pyodide/v0.20.0/full/pyodide.js
+          JUPYTERLITE_PYODIDE_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/pyodide/v0.20.0/full/
+          # PYODIDE_CDN_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/pyodide/v0.20.0/full/pyodide.js
           # JUPYTERLITE_BASE_URL: https://xiaoshuai-static.oss-accelerate.aliyuncs.com/jupyterlite-play/
         run: |
           cp README.md content
