@@ -28,8 +28,8 @@ jobs:
         run: |
           cp README.md content
           jupyter lite build --contents content
-          rm -f _output/labs/favicon.ico
-          cp favicon.ico _output/labs/
+          rm -f _output/lab/favicon.ico
+          cp favicon.ico _output/lab/
           touch _output/.nojekll
           echo play.xiaoshu.ai > _output/CNAME
       - name: Upload (dist)
