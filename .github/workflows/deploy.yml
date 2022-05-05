@@ -28,6 +28,10 @@ jobs:
         run: |
           cp README.md content
           jupyter lite build --contents content
+          rm -f _output/labs/favicon.ico
+          cp favicon.ico _output/labs/
+          touch _output/.nojekll
+          echo play.xiaoshu.ai > _output/CNAME
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
         with:
