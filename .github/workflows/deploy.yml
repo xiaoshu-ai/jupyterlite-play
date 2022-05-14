@@ -27,6 +27,7 @@ jobs:
           cp README.md content
           jupyter lite build --contents content
           cp content/index.html _output/
+          cp content/linux.html _output/
           find _output -name "*-tests.tar" | xargs rm -f {}
       - name: Upload (dist)
         uses: actions/upload-artifact@v2

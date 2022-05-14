@@ -1,0 +1,7 @@
+{
+  "jupyter-config-data": {
+    "fullLabextensionsUrl": "https://xiaoshuai-static.oss-accelerate.aliyuncs.com/jupyterlite-play/extensions",
+    "fullMathjaxUrl": "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js",
+    "fullStaticUrl": "https://xiaoshuai-static.oss-accelerate.aliyuncs.com/jupyterlite-play/build"
+  }
+}
