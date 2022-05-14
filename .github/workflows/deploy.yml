@@ -20,12 +20,13 @@ jobs:
           python-version: 3.8
       - name: Install the dependencies
         run: |
+          python -m pip install pkginfo
           python -m pip install -r requirements.txt
       - name: Build the JupyterLite site
         run: |
           cp README.md content
           jupyter lite build --contents content
-          copy content/index.html _output/
+          cp content/index.html _output/
           find _output -name "*-tests.tar" | xargs rm {}
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
