@@ -1,0 +1,10 @@
+version: '3'
+services:
+  jupyterlite:
+    image: python:3.8-slim
+    entrypoint: "sleep infinity"
+    volumes:
+    - .:/app
+    working_dir: /app
+    ports:
+    - "9000:8000"
