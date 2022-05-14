@@ -24,8 +24,8 @@ jobs:
       - name: Build the JupyterLite site
         run: |
           cp README.md content
-          jupyter lite build --contents content \
-            --pyodide=https://github.com/pyodide/pyodide/releases/download/0.20.0/pyodide-build-0.20.0.tar.bz2 \
+          jupyter lite build --contents content
+          copy content/index.html _output/
           find _output -name "*-tests.tar" | xargs rm {}
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
