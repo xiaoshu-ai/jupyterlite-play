@@ -1,0 +1,54 @@
+<!doctype html>
+<title>Basic Emulator</title><!-- not BASIC! -->
+
+<script src="https://xiaoshuai-static.oss-accelerate.aliyuncs.com/vm/libv86.js"></script>
+<script>
+    "use strict";
+
+    window.onload = function()
+    {
+        var emulator = window.emulator = new V86Starter({
+            wasm_path: "https://xiaoshuai-static.oss-accelerate.aliyuncs.com/vm/v86.wasm",
+            memory_size: 32 * 1024 * 1024,
+            vga_memory_size: 2 * 1024 * 1024,
+            screen_container: document.getElementById("screen_container"),
+            bios: {
+                url: "https://xiaoshuai-static.oss-accelerate.aliyuncs.com/vm/bios/seabios.bin",
+            },
+            vga_bios: {
+                url: "https://xiaoshuai-static.oss-accelerate.aliyuncs.com/vm/bios/vgabios.bin",
+            },
+            cdrom: {
+                url: "https://xiaoshuai-static.oss-accelerate.aliyuncs.com/vm/images/linux.iso",
+            },
+            autostart: true,
+        });
+    }
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?5bff766b35ac2e183c9a0d0ea5a31b15";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+<h1>Linux System Playground</h1>
+<hr />
+<h3>Login:</h3>
+<pre>
+    username: root
+    password:
+</pre>
+<hr />
+<h3>Available Commands:</h3>
+<pre>
+    ls /bin /sbin
+    ls /usr/bin /usr/sbin
+</pre>
+<!-- A minimal structure for the ScreenAdapter defined in browser/screen.js -->
+<div id="screen_container">
+    <div style="white-space: pre; font: 14px monospace; line-height: 14px"></div>
+    <canvas style="display: none"></canvas>
+</div>
