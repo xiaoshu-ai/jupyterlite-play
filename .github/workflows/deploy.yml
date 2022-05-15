@@ -26,9 +26,11 @@ jobs:
         run: |
           cp README.md content
           jupyter lite build --contents content
-          cp content/index.html _output/
-          cp content/linux.html _output/
           find _output -name "*-tests.tar" | xargs rm -f {}
+          cp content/linux.html _output/
+          mkdir -p _output/gh-pages
+          cp content/inframe.html _output/gh-pages/index.html
+          cp content/linux.html _output/gh-pages/
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
         with:
@@ -59,4 +61,4 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@4.1.3
         with:
           branch: gh-pages
-          folder: dist
+          folder: dist/gh-pages
