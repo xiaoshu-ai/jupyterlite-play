@@ -28,9 +28,12 @@ jobs:
           jupyter lite build --contents content
           find _output -name "*-tests.tar" | xargs rm -f {}
           cp content/linux.html _output/
+
           mkdir -p _output/gh-pages
           cp content/inframe.html _output/gh-pages/index.html
           cp content/linux.html _output/gh-pages/
+          echo play.xiaoshu.ai > _output/gh-pages/CNAME
+          touch _output/gh-pages/.nojekyll
       - name: Upload (dist)
         uses: actions/upload-artifact@v2
         with:
