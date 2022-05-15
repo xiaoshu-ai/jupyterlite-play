@@ -30,7 +30,7 @@ jobs:
           cp content/linux.html _output/
 
           mkdir -p _output/gh-pages
-          cp content/inframe.html _output/gh-pages/index.html
+          cp content/iframe.html _output/gh-pages/index.html
           cp content/linux.html _output/gh-pages/
           echo play.xiaoshu.ai > _output/gh-pages/CNAME
           touch _output/gh-pages/.nojekyll
